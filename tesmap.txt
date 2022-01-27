@@ -1,0 +1,46 @@
+TES MAP MULTIPLE
+
+<!-- <div class="container">
+<div id="map" style="height: 500px;">
+<script>
+function tampilDekat(){
+    getCurLocation();
+    
+    map_dekat = new google.maps.Map(document.getElementById('map'), {
+        zoom: 12,
+        center: {
+            lat : default_lat, 
+            lng : default_lng
+        }
+    });
+       
+    var data =  <?=json_encode($mapsma->get_results("SELECT * FROM mapsma"))?>;
+    $.each(data, function(k, v){
+        var pos = {
+            lat : parseFloat(v.lat),
+            lng : parseFloat(v.lng)
+        };
+        var contentString = '<h3>TES AJA</h3>' + 
+            '<p align="center"><a href="">Lihat Detail</a>';
+        var infowindow = new google.maps.InfoWindow({
+            content: contentString
+        });
+        const image =
+          "https://developers.google.com/maps/documentation/javascript/examples/full/images/info-i_maps.png";
+        var marker = new google.maps.Marker({
+            position: pos,
+            map: map_dekat,
+            icon: image,
+            animation: google.maps.Animation.DROP
+        });         
+        marker.addListener('click', function() {
+            infowindow.open(map_dekat, marker);
+        });
+    });    
+}  
+
+$(function(){
+    tampilDekat();
+})
+</script>
+</div> -->
